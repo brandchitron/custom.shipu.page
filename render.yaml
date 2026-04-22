@@ -1,0 +1,27 @@
+
+services:
+  - type: web
+    name: shipu-ai-bot
+    env: node
+    plan: free # আপনি চাইলে 'starter' এ আপগ্রেড করতে পারেন
+    region: singapore # বাংলাদেশের জন্য সিঙ্গাপুর রিজিয়ন সবচেয়ে ফাস্ট
+    
+    # অটোমেটিক বিল্ড কমান্ড (Npm install এখানে হ্যান্ডেল হবে)
+    buildCommand: "npm install"
+    
+    # সার্ভার স্টার্ট কমান্ড
+    startCommand: "npm start"
+
+    # এনভায়রনমেন্ট ভেরিয়েবল কনফিগারেশন
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x
+      - key: PORT
+        value: 3000
+      - fromGroup: shipu-ai-secrets # রেন্ডার ড্যাশবোর্ডে গ্রুপ তৈরি করলে সুবিধা
+
+    # হেলথ চেক (সার্ভার লাইভ আছে কিনা চেক করার জন্য)
+    healthCheckPath: /webhook 
+
+  # ডাটাবেজ যদি রেন্ডারে হোস্ট করেন তবে এখানে অ্যাড করা যায়, 
+  # তবে আপনি যেহেতু MongoDB Atlas ইউজ করছেন, তাই এখানে লাগবে না।

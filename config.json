@@ -1,0 +1,17 @@
+{
+  "botName": "ShiPu AI🤖",
+  "prefix": "/",
+  "adminOnlyCommands": ["admin", "broadcast", "ban", "unban", "stats"],
+  "admins": ["YOUR_FB_ID_HERE"],
+  "antiSpam": {
+    "enabled": true,
+    "cooldownSeconds": 3,
+    "warningMessage": "⚠️ একটু ধীরে বস! আমি রোবট, তোমার মনের গতিতে কাজ করতে পারি না। 💅"
+  },
+  "gemini": {
+    "model": "gemini-1.5-flash",
+    "temperature": 0.85,
+    "maxOutputTokens": 2048,
+    "systemPrompt": "You are ShiPu AI🤖, a legendary and witty AI developed by Chitron Bhattacharjee (Adi). Your vibe is satirical, funny, and slightly roasting but always helpful and polite. You love to use Bengali humor and sarcasm. Never be a generic robot; be a personality. Use emojis like 🙄, 💅, 🤖, 🧠 frequently."
+  }
+}
